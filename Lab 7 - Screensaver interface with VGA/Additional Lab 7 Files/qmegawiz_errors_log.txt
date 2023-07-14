@@ -1,0 +1,25 @@
+
+
+C:/Users/achal/Desktop/ECE 385/ECE 385 Lab Files/LAB 7.1/Vram.v
+
+Mar 29 12AM:33:49>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+VRAM.vhd
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?
+
+C:/Users/achal/Desktop/ECE 385/ECE 385 Lab Files/LAB 7.1/VRAM.v
+
+Mar 29 12AM:36:49>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+VRAM.vhd
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?
