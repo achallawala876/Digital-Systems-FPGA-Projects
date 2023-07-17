@@ -1,0 +1,4 @@
+Warning (10273): Verilog HDL warning at HexDriver.sv(22): extended using "x" or "z" File: C:/Users/achal/Desktop/385 2.2 Files/HexDriver.sv Line: 22
+Info (10281): Verilog HDL Declaration information at slc3_sramtop.sv(7): object "Run" differs only in case from object "RUN" in the same scope File: C:/Users/achal/Downloads/lab 5.1/slc3_sramtop.sv Line: 7
+Info (10281): Verilog HDL Declaration information at slc3_sramtop.sv(7): object "Continue" differs only in case from object "CONTINUE" in the same scope File: C:/Users/achal/Downloads/lab 5.1/slc3_sramtop.sv Line: 7
+Info (10281): Verilog HDL Declaration information at slc3.sv(46): object "BEN" differs only in case from object "ben" in the same scope File: C:/Users/achal/Downloads/lab 5.1/slc3.sv Line: 46

@@ -1,0 +1,435 @@
+//------------------------------------------------------------------------------
+// Company:          UIUC ECE Dept.
+// Engineer:         Stephen Kempf
+//
+// Create Date:    17:44:03 10/08/06
+// Design Name:    ECE 385 Lab 6 Given Code - Incomplete ISDU
+// Module Name:    ISDU - Behavioral
+//
+// Comments:
+//    Revised 03-22-2007
+//    Spring 2007 Distribution
+//    Revised 07-26-2013
+//    Spring 2015 Distribution
+//    Revised 02-13-2017
+//    Spring 2017 Distribution
+//------------------------------------------------------------------------------
+
+
+module ISDU (   input logic         Clk, 
+									Reset,
+									Run,
+									Continue,
+									
+				input logic[3:0]    Opcode, 
+				input logic         IR_5,
+				input logic         IR_11,
+				input logic         BEN,
+				  
+				output logic   LD_MAR,
+									LD_MDR,
+									LD_IR,
+									LD_BEN,
+									LD_CC,
+									LD_REG,
+									LD_PC,
+									LD_LED, // for PAUSE instruction
+									
+				output logic        GatePC,
+									GateMDR,
+									GateALU,
+									GateMARMUX,
+									
+				output logic [1:0]  PCMUX,
+				output logic        DRMUX,
+									SR1MUX,
+									SR2MUX,
+									ADDR1MUX,
+				output logic [1:0]  ADDR2MUX,
+									ALUK,
+				  
+				output logic   Mem_OE,
+									Mem_WE
+				);
+
+	enum logic [4:0] {  Halted, 
+						PauseIR1, 
+						PauseIR2, 
+						S_18, 
+						S_33_1, 
+						S_33_2,
+						S_33_3,
+						S_33_4,
+						S_35, 
+						S_32, 
+						S_1,
+						S_5,S_9,
+						S_6,S_25_1,S_25_2,S_25_3,S_25_4,S_27,
+						S_7,S_23,S_16_1,S_16_2,S_16_3,S_16_4,
+						S_4,S_21,
+						S_12,
+						S_0,S_22}   State, Next_state;   // Internal state logic
+		
+	always_ff @ (posedge Clk)
+	begin
+		if (Reset) 
+			State <= Halted;
+		else 
+			State <= Next_state;
+	end
+   
+	always_comb
+	begin 
+		// Default next state is staying at current state
+		Next_state = State;
+		
+		// Default controls signal values
+		LD_MAR = 1'b0;
+		LD_MDR = 1'b0;
+		LD_IR = 1'b0;
+		LD_BEN = 1'b0;
+		LD_CC = 1'b0;
+		LD_REG = 1'b0;
+		LD_PC = 1'b0;
+		LD_LED = 1'b0;
+		 
+		GatePC = 1'b0;
+		GateMDR = 1'b0;
+		GateALU = 1'b0;
+		GateMARMUX = 1'b0;
+		 
+		ALUK = 2'b00;
+		 
+		PCMUX = 2'b00;
+		DRMUX = 1'b0;
+		SR1MUX = 1'b0;
+		SR2MUX = 1'b0;
+		ADDR1MUX = 1'b0;
+		ADDR2MUX = 2'b00;
+		 
+		Mem_OE = 1'b0;
+		Mem_WE = 1'b0;
+	
+		// Assign next state
+		unique case (State)
+			Halted : 
+				if (Run) 
+					Next_state = S_18;                      
+			S_18 : 
+				Next_state = S_33_1;
+			// Any states involving SRAM require more than one clock cycles.
+			// The exact number will be discussed in lecture.
+			S_33_1 : 
+				Next_state = S_33_2;
+			S_33_2 : 
+				Next_state = S_33_3;
+			S_33_3:
+				Next_state = S_33_4;
+			S_33_4 : 
+				Next_state = S_35;	
+			S_35 : 
+				Next_state = S_32;
+			
+			//	Next_state = PauseIR1;
+			// IR1 and PauseIR2 are only for Week 1 such that TAs can see 
+			// the values in IR.
+			/////////////////////////////////////
+				
+			PauseIR1 : 
+			begin
+				if (~Continue) 
+					Next_state = PauseIR1;
+				else 
+					Next_state = PauseIR2;
+			end
+			PauseIR2 : // accounts for button pressdown (only moves when button is released -> PAUSEIR2
+			begin
+				if (Continue) 
+					Next_state = PauseIR2;
+				else 
+					Next_state = S_18;
+			end
+					
+			///////////////////////////////////////
+			S_32:
+				
+				case(Opcode)
+				
+				4'b0001: Next_state = S_1; // add
+				4'b0101: Next_state = S_5; // and
+				4'b1001: Next_state = S_9; // not
+				4'b0110: Next_state = S_6; // LDR
+				4'b0111: Next_state = S_7; // STR
+				4'b0100: Next_state = S_4; // JSR
+				4'b1100: Next_state = S_12; // JMP
+				4'b0000: Next_state = S_0; // BR
+				4'b1101: Next_state = PauseIR1; // PSE // THIS IS WHERE WE ARE GOING TO PAUSEIR1
+				
+				default Next_state = S_18; // goes back to the initial state
+			
+				
+				endcase
+				
+			S_1: //ADD
+				Next_state = S_18;
+				
+			S_5: // AND
+			Next_state = S_18;
+			
+			S_9: // NOT
+				Next_state = S_18;
+				
+			S_6: // LDR
+				Next_state = S_25_1;
+			S_25_1: // 
+				Next_state = S_25_2;
+			S_25_2:
+				Next_state = S_25_3;
+			S_25_3:
+				Next_state = S_25_4;
+			S_25_4:
+				Next_state = S_27;
+				
+			S_27:
+				Next_state = S_18;
+				
+			S_7: //StR
+				Next_state = S_23;
+			S_23:
+				Next_state = S_16_1;
+			S_16_1:
+				Next_state = S_16_2;
+			S_16_2:
+				Next_state = S_16_3;
+			S_16_3:
+				Next_state = S_16_4;
+			S_16_4:
+				Next_state = S_18;
+				
+			S_4://JSR
+				Next_state = S_21;
+			S_21:
+				Next_state = S_18;
+				
+			S_12: //JMP
+				Next_state = S_18;
+				
+			S_0: 
+			if(BEN == 1) //BR
+				Next_state = S_22;
+			else
+				Next_state = S_18;
+				
+			S_22:
+				Next_state = S_18;
+				
+			// do we change PSE
+
+			default : // ALWAYS GO BACK
+				Next_state = S_18;
+
+		endcase
+		
+		// Assign control signals based on current state
+		case (State)
+		
+			Halted:
+			LD_LED = 1'b1; // does this matter?
+			
+			S_18 : 
+				begin 
+					GatePC = 1'b1;
+					LD_MAR = 1'b1;
+					PCMUX = 2'b00;
+					LD_PC = 1'b1;
+				end
+				
+			S_33_1 : 
+				Mem_OE = 1'b1;
+				
+			S_33_2 :
+				Mem_OE = 1'b1;
+			S_33_3:
+				Mem_OE = 1'b1;
+			S_33_4 : 
+				begin 
+					Mem_OE = 1'b1;
+					LD_MDR = 1'b1;
+					
+				end	
+			S_35 : 
+				begin 
+					GateMDR = 1'b1;
+					LD_IR = 1'b1;
+				end
+				
+			PauseIR1: LD_LED = 1'b1;
+			
+			PauseIR2: LD_LED = 1'b1;
+			
+			S_32 : // DECODE
+				LD_BEN = 1'b1;
+				
+			S_1 : // ADD
+				begin 
+					SR2MUX = IR_5;
+					SR1MUX = 1'b1;
+					ALUK = 2'b00;
+					GateALU = 1'b1;
+					LD_REG = 1'b1;
+					DRMUX = 1'b0;
+					LD_CC = 1'b1;
+				end
+					
+			S_5 : // AND
+				begin
+					SR2MUX = IR_5;
+					SR1MUX = 1'b1;
+					ALUK = 2'b01; // only thing different in AND
+					GateALU = 1'b1;
+					LD_REG = 1'b1;
+					DRMUX = 1'b0;
+					LD_CC = 1'b1;
+				end
+				
+			S_9 : // NOT
+				begin 
+					SR2MUX = IR_5;
+					SR1MUX = 1'b1;
+					ALUK = 2'b10; // only thing different in NOT
+					GateALU = 1'b1;
+					LD_REG = 1'b1;
+					DRMUX = 1'b0;
+					LD_CC = 1'b1;
+				end 
+				
+			S_6 : // LDR
+				begin
+					GateMARMUX = 1'b1;
+					ADDR1MUX = 1'b1;
+					ADDR2MUX = 2'b01;
+					SR1MUX = 1'b1;
+					LD_REG = 1'b0; // DON'T LOAD INTO DR YET!
+					LD_MAR = 1'b1; // load the memory into MAR
+				end
+					
+			S_25_1 : // continuation of LDR -> WE DON'T CARE ABOUT MIO_EN AS MEM2IO HANDLES THAT SHIT FOR US
+				begin
+					Mem_OE = 1'b1; // read from memorY
+					// assuming 
+				end
+				
+			S_25_2 : // continuation of LDR
+				begin
+					Mem_OE = 1'b1; 
+				end
+				
+			S_25_3 : // continuation of LDR
+				begin
+					Mem_OE = 1'b1; 			
+				end
+			S_25_4 : // continuation of LDR
+				begin
+					LD_MDR = 1'b1;
+					Mem_OE = 1'b1; 			
+				end
+				
+			S_27 : // last state of LDR
+				begin
+					LD_MDR = 1'b0;
+					GateMDR = 1'b1;
+					LD_CC = 1'b1;
+					LD_REG = 1'b1;
+					DRMUX = 1'b0;
+				end
+				
+				
+			S_7 : // STR
+				begin
+					GateMARMUX = 1'b1;
+					ADDR1MUX = 1'b1;
+					ADDR2MUX = 2'b01;
+					SR1MUX = 1'b1;
+					//LD_REG = 1'b0; // NOT LOADING TO DR ANYWHERE
+					LD_MAR = 1'b1; // load the memory into MAR
+				end
+				
+			S_23 : // continuation of STR
+				begin
+					SR1MUX = 1'b0; 
+					ADDR1MUX = 1'b1;
+					ADDR2MUX = 2'b00;
+					GateMARMUX = 1'b1;
+					LD_MDR = 1'b1;
+				end
+				
+			S_16_1 : // final stage of STR (M[MAR] <- MDR)
+				begin
+					Mem_WE = 1'b1;
+				end
+				
+			S_16_2 : // final stage of STR (M[MAR] <- MDR)
+				begin
+					Mem_WE = 1'b1;
+				end
+				
+			S_16_3 : // final stage of STR (M[MAR] <- MDR)
+				begin
+					Mem_WE = 1'b1;
+				end
+			S_16_4 : // final stage of STR (M[MAR] <- MDR)
+				begin
+					Mem_WE = 1'b1;
+				end
+			
+			S_4 : // JSR state 1 (R7 <- PC)
+				begin
+					GatePC = 1'b1;
+					DRMUX = 1'b1; // setting DR to R7
+					LD_REG = 1'b1; // for loading register in JSR state
+				end
+				
+			S_21 : // JSR state 2 (PC <- PC + offset11)
+				begin 
+					ADDR1MUX = 1'b0; 
+					ADDR2MUX = 2'b11; // IR[10:0]
+					PCMUX = 2'b10;
+					LD_PC = 1'b1;
+				
+				end
+				
+			S_12 : // JMP state (only one state: PC <- BaseR)
+				begin
+					SR1MUX = 1'b1; // IR[8:6]
+					ADDR1MUX = 1'b1;
+					ADDR2MUX = 2'b00;
+					PCMUX = 2'b10;
+					LD_PC = 1'b1;		
+				end
+			S_0: //Break state 
+				begin
+					LD_CC = 1'b1;
+					LD_BEN = 1'b1;
+					// we are setting LDcc and LDBEN to calculate the output of BEN 
+				end
+			S_22:  // PC<-PC+OFFSET9
+				begin
+					ADDR1MUX = 1'b0;
+					ADDR2MUX = 2'b10;
+					PCMUX = 2'b10;
+					LD_PC = 1'b1; 
+				end
+			
+			default : 				
+			begin // State 18 values 
+					GatePC = 1'b1;
+					LD_MAR = 1'b1;
+					PCMUX = 2'b00;
+					LD_PC = 1'b1;
+				end
+		endcase
+	end 
+
+	
+endmodule
+

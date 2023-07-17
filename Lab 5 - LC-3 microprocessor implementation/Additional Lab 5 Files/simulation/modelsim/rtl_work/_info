@@ -1,0 +1,625 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/achal/Desktop/Lab 5.1/simulation/modelsim
+vADDR1MUX
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1679366103
+!i10b 1
+!s100 KWnbH[DU5<^IJ1i6=bQa53
+IW;N8KliFb38^h9CU0lPFN3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 MUXes_sv_unit
+S1
+R0
+Z5 w1677468424
+Z6 8C:/Users/achal/Downloads/lab 5.1/MUXes.sv
+Z7 FC:/Users/achal/Downloads/lab 5.1/MUXes.sv
+L0 30
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1679366103.000000
+Z10 !s107 C:/Users/achal/Downloads/lab 5.1/MUXes.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/MUXes.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work {+incdir+C:/Users/achal/Downloads/lab 5.1}
+Z14 tCvgOpt 0
+n@a@d@d@r1@m@u@x
+vADDR2MUX
+R1
+R2
+!i10b 1
+!s100 3izcB>347fJ6lYajjB0mL2
+IEO`UeM4D6`EAJc]KP:fb31
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 46
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@a@d@d@r2@m@u@x
+vALU
+R1
+R2
+!i10b 1
+!s100 dIa;QfcVkgPPf5;1I7ObI0
+IJI?ASiNCkL`mMZAEI?3g03
+R3
+!s105 ALU_sv_unit
+S1
+R0
+w1677468519
+8C:/Users/achal/Downloads/lab 5.1/ALU.sv
+FC:/Users/achal/Downloads/lab 5.1/ALU.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/achal/Downloads/lab 5.1/ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/ALU.sv|
+!i113 1
+R12
+R13
+R14
+n@a@l@u
+vBEN
+R1
+Z15 !s110 1679366104
+!i10b 1
+!s100 `D@de5H^SRRH4M0W9GJ_N1
+Ih1zDFiI3NUjY^Lic[f1Fd3
+R3
+!s105 BEN_sv_unit
+S1
+R0
+w1677697420
+8C:/Users/achal/Downloads/lab 5.1/BEN.sv
+FC:/Users/achal/Downloads/lab 5.1/BEN.sv
+L0 3
+R8
+r1
+!s85 0
+31
+Z16 !s108 1679366104.000000
+!s107 C:/Users/achal/Downloads/lab 5.1/BEN.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/BEN.sv|
+!i113 1
+R12
+R13
+R14
+n@b@e@n
+vDRMUX
+R1
+R2
+!i10b 1
+!s100 1M2Em3OjoCCdCNL18d2lH2
+IIX@1EK?LedlU0VTJIi4ah2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 90
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@d@r@m@u@x
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 D:I:0DliS5oKgkJ;YVOHH0
+Ib5>2=ak[Km<K]Ub=``Jhn0
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1678866648
+8C:/Users/achal/Desktop/385 2.2 Files/HexDriver.sv
+FC:/Users/achal/Desktop/385 2.2 Files/HexDriver.sv
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1679366102.000000
+!s107 C:/Users/achal/Desktop/385 2.2 Files/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Desktop/385 2.2 Files|C:/Users/achal/Desktop/385 2.2 Files/HexDriver.sv|
+!i113 1
+R12
+!s92 -sv -work work {+incdir+C:/Users/achal/Desktop/385 2.2 Files}
+R14
+n@hex@driver
+vISDU
+R1
+R2
+!i10b 1
+!s100 >Wmmi?A_POV5SajnOF4B>3
+I@i:d>?KMiQ<:cX0gJQ2Gk3
+R3
+!s105 ISDU_sv_unit
+S1
+R0
+w1677697666
+8C:/Users/achal/Downloads/lab 5.1/ISDU.sv
+FC:/Users/achal/Downloads/lab 5.1/ISDU.sv
+Z17 L0 19
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/achal/Downloads/lab 5.1/ISDU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/ISDU.sv|
+!i113 1
+R12
+R13
+R14
+n@i@s@d@u
+vMem2IO
+R1
+R2
+!i10b 1
+!s100 ]Q:NN9GIUgNPLn_MG6U5k1
+I[_Lb1>Xjg@N=4lSH3ZN]@3
+R3
+!s105 Mem2IO_sv_unit
+S1
+R0
+Z18 w1677117816
+8C:/Users/achal/Downloads/lab 5.1/Mem2IO.sv
+FC:/Users/achal/Downloads/lab 5.1/Mem2IO.sv
+L0 16
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/achal/Downloads/lab 5.1/Mem2IO.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/Mem2IO.sv|
+!i113 1
+R12
+R13
+R14
+n@mem2@i@o
+Xmemory_contents_sv_unit
+R1
+Z19 DXx4 work 6 SLC3_2 0 22 J?gI51B>?_eJ]fgTJ80X?0
+VeQ_SMz2Ye<?Cjh?Mke]Uh1
+r1
+!s85 0
+31
+!i10b 1
+!s100 :0FBYob897RSc><Y^lI?F2
+IeQ_SMz2Ye<?Cjh?Mke]Uh1
+!i103 1
+S1
+R0
+R18
+Z20 8C:/Users/achal/Downloads/lab 5.1/memory_contents.sv
+Z21 FC:/Users/achal/Downloads/lab 5.1/memory_contents.sv
+L0 17
+R8
+R16
+Z22 !s107 C:/Users/achal/Downloads/lab 5.1/memory_contents.sv|
+Z23 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/memory_contents.sv|
+!i113 1
+R12
+R13
+R14
+vmemory_parser
+R1
+R19
+DXx4 work 23 memory_contents_sv_unit 0 22 eQ_SMz2Ye<?Cjh?Mke]Uh1
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 hfX5[fVi=fEbdX7KInPF?2
+ISaVKK:1k5zn@J5KLOAkln1
+!s105 memory_contents_sv_unit
+S1
+R0
+R18
+R20
+R21
+R17
+R8
+R16
+R22
+R23
+!i113 1
+R12
+R13
+R14
+vMIOMUX
+R1
+R2
+!i10b 1
+!s100 fZMEE?QL9]80mc@eT_VSM3
+IlX^iVQW[nS[Hi@MfRR=Ta1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 67
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@m@i@o@m@u@x
+vPCMUX
+R1
+R2
+!i10b 1
+!s100 1^Z0zFM70McS<]Xl`^@>82
+IHBh^Q5=7H17_C`STmZEAF2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@p@c@m@u@x
+vREGISTER
+R1
+R2
+!i10b 1
+!s100 iN`gj7WVJCh76NmPA^zdA1
+I27Tfc0lco9bfoWTPLUS_N2
+R3
+!s105 REGs_sv_unit
+S1
+R0
+R18
+8C:/Users/achal/Downloads/lab 5.1/REGs.sv
+FC:/Users/achal/Downloads/lab 5.1/REGs.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/achal/Downloads/lab 5.1/REGs.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/REGs.sv|
+!i113 1
+R12
+R13
+R14
+n@r@e@g@i@s@t@e@r
+vREGISTER_FILE
+R1
+R15
+!i10b 1
+!s100 OLZV58]RAK3=mTk2CMlHU1
+I3X^Mm0cY^]_JWF;[F2^T20
+R3
+!s105 REG_FILE_sv_unit
+S1
+R0
+w1677871162
+8C:/Users/achal/Downloads/lab 5.1/REG_FILE.sv
+FC:/Users/achal/Downloads/lab 5.1/REG_FILE.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/achal/Downloads/lab 5.1/REG_FILE.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/REG_FILE.sv|
+!i113 1
+R12
+R13
+R14
+n@r@e@g@i@s@t@e@r_@f@i@l@e
+vslc3
+R1
+R15
+!i10b 1
+!s100 =J6J=5XQFSl481A?l>8ge0
+I_6IYY8BQPAoXYC5Nj_IHW1
+R3
+!s105 slc3_sv_unit
+S1
+R0
+w1677871175
+8C:/Users/achal/Downloads/lab 5.1/slc3.sv
+FC:/Users/achal/Downloads/lab 5.1/slc3.sv
+L0 20
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/achal/Downloads/lab 5.1/slc3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/slc3.sv|
+!i113 1
+R12
+R13
+R14
+XSLC3_2
+R1
+R2
+!i10b 1
+!s100 Cz8_^@QRefP31?j=Zf>lj0
+IJ?gI51B>?_eJ]fgTJ80X?0
+VJ?gI51B>?_eJ]fgTJ80X?0
+S1
+R0
+R18
+8C:/Users/achal/Downloads/lab 5.1/SLC3_2.sv
+FC:/Users/achal/Downloads/lab 5.1/SLC3_2.sv
+L0 24
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/achal/Downloads/lab 5.1/SLC3_2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/SLC3_2.sv|
+!i113 1
+R12
+R13
+R14
+n@s@l@c3_2
+vslc3_testtop
+R1
+R15
+!i10b 1
+!s100 ^4hhCjYV2aT;kkekDk8a71
+IcLOTLJGQb@^:HPnd;I^FC1
+R3
+!s105 slc3_testtop_sv_unit
+S1
+R0
+R18
+8C:/Users/achal/Downloads/lab 5.1/slc3_testtop.sv
+FC:/Users/achal/Downloads/lab 5.1/slc3_testtop.sv
+L0 4
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/achal/Downloads/lab 5.1/slc3_testtop.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/slc3_testtop.sv|
+!i113 1
+R12
+R13
+R14
+vSR1MUX
+R1
+R2
+!i10b 1
+!s100 GXT78PZ]gO9LR8AeoGK_:0
+I7N3G]XJB=0?f[]::Un16Q2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 106
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@s@r1@m@u@x
+vSR2MUX
+R1
+R2
+!i10b 1
+!s100 lh<5JJkJXQi_OAC`[LAGV0
+IMEJznA^UR80F6>TbYn=AE2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 122
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@s@r2@m@u@x
+vsync
+R1
+R2
+!i10b 1
+!s100 OHNUFN]797>kYzRL;ikZR2
+ICNIhIzoEZba>CDg]m9d<d1
+R3
+Z24 !s105 synchronizers_sv_unit
+S1
+R0
+Z25 w1677117817
+Z26 8C:/Users/achal/Downloads/lab 5.1/synchronizers.sv
+Z27 FC:/Users/achal/Downloads/lab 5.1/synchronizers.sv
+L0 7
+R8
+r1
+!s85 0
+31
+R9
+Z28 !s107 C:/Users/achal/Downloads/lab 5.1/synchronizers.sv|
+Z29 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/synchronizers.sv|
+!i113 1
+R12
+R13
+R14
+vsync_r0
+R1
+R2
+!i10b 1
+!s100 _Sn:CfHFjznVZen=7jc>C2
+IdHD]cV9VNUWc^BKJ?YIMH1
+R3
+R24
+S1
+R0
+R25
+R26
+R27
+L0 21
+R8
+r1
+!s85 0
+31
+R9
+R28
+R29
+!i113 1
+R12
+R13
+R14
+vsync_r1
+R1
+R2
+!i10b 1
+!s100 4jfZd?z`MK2Y<NLFC0<QH2
+I^_JfF8j2^RIkzUl[gJo3W2
+R3
+R24
+S1
+R0
+R25
+R26
+R27
+L0 42
+R8
+r1
+!s85 0
+31
+R9
+R28
+R29
+!i113 1
+R12
+R13
+R14
+vtest_memory
+R1
+R2
+!i10b 1
+!s100 JAXhO?6GV:H>``me>_X5<1
+I642EhAMZjoii?^<1ALQbX3
+R3
+!s105 test_memory_sv_unit
+S1
+R0
+R25
+8C:/Users/achal/Downloads/lab 5.1/test_memory.sv
+FC:/Users/achal/Downloads/lab 5.1/test_memory.sv
+L0 26
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/achal/Downloads/lab 5.1/test_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Downloads/lab 5.1|C:/Users/achal/Downloads/lab 5.1/test_memory.sv|
+!i113 1
+R12
+R13
+R14
+vtestbench
+R1
+R15
+!i10b 1
+!s100 2T[gL5R294BWe@<I4^oDo3
+I1H9NSz`5mAbQjzDa]m]5<3
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1679366078
+8C:/Users/achal/Desktop/Lab 5.1/../../Downloads/lab 5.1/testbench.sv
+FC:/Users/achal/Desktop/Lab 5.1/../../Downloads/lab 5.1/testbench.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/achal/Desktop/Lab 5.1/../../Downloads/lab 5.1/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/achal/Desktop/Lab 5.1/../../Downloads/lab 5.1|C:/Users/achal/Desktop/Lab 5.1/../../Downloads/lab 5.1/testbench.sv|
+!i113 1
+R12
+!s92 -sv -work work {+incdir+C:/Users/achal/Desktop/Lab 5.1/../../Downloads/lab 5.1}
+R14
